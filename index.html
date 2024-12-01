@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EndoCalc - Endocrinology Calculator</title>
+    <meta name="description" content="Endocrinology Calculator for Medical Professionals">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#2c7a9e">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/android/android-launchericon-192-192.png">
+    <link rel="apple-touch-icon" href="icons/android/android-launchericon-192-192.png">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <h1>EndoCalc</h1>
+    </header>
+
+    <!-- Main menu container -->
+    <main id="main-container" class="main-container">
+        <section class="category">
+            <div class="category-header">
+                <h2>General</h2>
+            </div>
+            <div class="category-content">
+                <a href="#pounds-kg" class="calculator-link">Pounds - Kg Convertor</a>
+                <a href="#egfr-mdrd" class="calculator-link">eGFR MDRD</a>
+                <a href="#bmi" class="calculator-link">BMI</a>
+                <a href="#metabolic-syndrome" class="calculator-link">Metabolic Syndrome Criteria</a>
+                <a href="#bmr" class="calculator-link">Base Metabolic Rate (BMR)</a>
+                <a href="#steroid" class="calculator-link">Steroid Convertor</a>
+                <a href="#ideal-weight" class="calculator-link">Ideal Body Weight & Adjusted Body Weight</a>
+            </div>
+        </section>
+
+        <section class="category">
+            <div class="category-header">
+                <h2>Diabetes</h2>
+            </div>
+            <div class="category-content">
+                <a href="#corrected-sodium" class="calculator-link">Corrected sodium for glucose</a>
+                <a href="#hba1c" class="calculator-link">HbA1c-Fructosamine-Glucose</a>
+                <a href="#pump-ratio" class="calculator-link">Type 1 Pump Ratio</a>
+                <a href="#nafld" class="calculator-link">NAFLD Fibrosis Score</a>
+            </div>
+        </section>
+
+        <section class="category">
+            <div class="category-header">
+                <h2>Calcium And Minerals</h2>
+            </div>
+            <div class="category-content">
+                <a href="#calcium-albumin" class="calculator-link">Calcium Corrected For Albumin</a>
+                <a href="#fhh" class="calculator-link">Familial Hypocalciuric Hypercalcemia</a>
+                <a href="#chloride-phosphorus" class="calculator-link">Chloride Phosphorous Ratio</a>
+                <a href="#siadh" class="calculator-link">SIADH Diagnostic Criteria</a>
+                <a href="#osmality" class="calculator-link">Serum Osmality and Gap</a>
+                <a href="#free-water" class="calculator-link">Free Water Deficit in Hypernatremia</a>
+            </div>
+        </section>
+
+        <section class="category">
+            <div class="category-header">
+                <h2>Thyroid</h2>
+            </div>
+            <div class="category-content">
+                <a href="#thyroxine" class="calculator-link">Thyroxine Dose Weight Based</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Calculator container -->
+    <div id="calculator-container" class="calculator-container hidden"></div>
+
+    <!-- Scripts -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

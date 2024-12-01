@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EndoCalc - Offline Mode</title>
+    <link rel="manifest" href="./manifest.json">
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+    <div class="offline-container">
+        <h1>EndoCalc - Offline Mode</h1>
+        <div class="offline-content">
+            <p>You're currently offline, but don't worry! EndoCalc works offline for all previously visited calculators.</p>
+            <p>You can still access all calculators you've used before.</p>
+            
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                Current Status: Offline
+            </div>
+
+            <div class="action-buttons">
+                <button onclick="tryReconnecting()" class="retry-button">
+                    Check Connection
+                </button>
+                <button onclick="window.history.back()" class="back-button">
+                    Go Back
+                </button>
+            </div>
+
+            <div class="cached-calculators">
+                <h2>Available Offline Calculators:</h2>
+                <div id="calculator-list">
+                    <!-- Will be populated dynamically -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Function to check network status and redirect if online
+        async function tryReconnecting() {
+            try {
+                const response = await fetch('./');
+                if (response.status === 200) {
+                    window.location.reload();
+                }
+            } catch (err) {
+                alert('Still offline. Please check your internet connection.');
+            }
+        }
+
+        // Function to list available cached calculators
+        async function listCachedCalculators() {
+            const cache = await caches.open('endocalc-v2');
+            const keys = await cache.keys();
+            const calculatorList = document.getElementById('calculator-list');
+            
+            const calculatorFiles = keys
+                .map(key => key.url)
+                .filter(url => url.includes('/calculators/'))
+                .map(url => {
+                    const name = url.split('/').pop().replace('.js', '');
+                    return `<a href="/#${name}" class="calculator-link">${name.replace('-', ' ').toUpperCase()}</a>`;
+                });
+
+            calculatorList.innerHTML = calculatorFiles.join('') || 'No calculators cached yet';
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            listCachedCalculators();
+        });
+    </script>
+</body>
+</html>
