@@ -50,7 +50,7 @@ class EndoCalc {
                     });
                 }
 
-                const registration = await navigator.serviceWorker.register('./sw.js');
+                const registration = await navigator.serviceWorker.register('./Endocrinology.io/sw.js');
                 console.log('Service Worker registered successfully:', registration.scope);
 
                 // Handle updates
