@@ -172,6 +172,72 @@ button[type="submit"]:hover {
     background-color: var(--hover-color);
 }
 
+/* Steroid Converter specific styles */
+.steroid-converter .steroid-selectors {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.steroid-converter .dose-input {
+    text-align: center;
+}
+
+.steroid-converter .equivalent-dose {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem;
+    background-color: #e6f6ff;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.steroid-converter .info-box {
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border-left: 4px solid #2c7a9e;
+}
+
+.steroid-converter .info-box h3 {
+    margin-top: 0;
+    color: #2c7a9e;
+}
+
+.steroid-converter .potency-table {
+    overflow-x: auto;
+}
+
+.steroid-converter table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.steroid-converter th,
+.steroid-converter td {
+    padding: 0.5rem;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.steroid-converter th {
+    background-color: #f1f3f5;
+    font-weight: 600;
+}
+
+.steroid-converter tr:hover {
+    background-color: #f8f9fa;
+}
+
+@media (min-width: 768px) {
+    .steroid-converter .steroid-selectors {
+        grid-template-columns: 2fr 1fr 2fr;
+        align-items: end;
+    }
+}
 /* Result area styles */
 .result-area {
     margin-top: 2rem;
